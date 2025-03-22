@@ -22,4 +22,4 @@ dnf5 install -y gnome-shell-extension-pop-shell
 
 #### Example for enabling a System Unit File
 
-systemctl enable podman.socket
+systemctl enable libvirtd
