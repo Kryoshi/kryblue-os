@@ -19,7 +19,7 @@ COPY / /ctx
 RUN mkdir -p /var/lib/alternatives && \
     /ctx/build/build.sh  && \
     mv /var/lib/alternatives /staged-alternatives && \
-    /ctx/build/clean-stage.sh && \
+    /ctx/build/clean_stage.sh && \
     ostree container commit && \
     mkdir -p /var/lib && mv /staged-alternatives /var/lib/alternatives && \
     mkdir -p /var/tmp && \
