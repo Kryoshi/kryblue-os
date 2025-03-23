@@ -15,9 +15,9 @@ echo "eval \"\$(starship init bash)\"" >> /etc/bashrc
 ### dnf
 
 packages = (
-  @virtualization
-  nerd-fonts
-  fastfetch
+  "@virtualization"
+  "nerd-fonts"
+  "fastfetch"
 )
 for package in ${packages[@]}; do
   dnf5 install -y "$package"
@@ -25,14 +25,14 @@ done
 
 # Gnome extensions
 extensions = (
-  gnome-shell-extension-pop-shell
-  gnome-shell-extension-blur-my-shell
-  gnome-shell-extension-caffeine
-  gnome-shell-extension-appindicator
-  gnome-shell-extension-vertical-workspaces
-  gnome-shell-extension-system-monitor-applet
-  gnome-shell-extension-freon
-  gnome-shell-extension-frippery-move-clock
+  "gnome-shell-extension-pop-shell"
+  "gnome-shell-extension-blur-my-shell"
+  "gnome-shell-extension-caffeine"
+  "gnome-shell-extension-appindicator"
+  "gnome-shell-extension-vertical-workspaces"
+  "gnome-shell-extension-system-monitor-applet"
+  "gnome-shell-extension-freon"
+  "gnome-shell-extension-frippery-move-clock"
 )
 for extension in ${extensions[@]}; do
   dnf5 install -y "$extension"
