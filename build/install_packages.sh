@@ -30,8 +30,7 @@ extensions=(
   "gnome-shell-extension-caffeine"
   "gnome-shell-extension-appindicator"
   "gnome-shell-extension-vertical-workspaces"
-  "gnome-shell-extension-system-monitor-applet"
-  "gnome-shell-extension-freon"
+  "gnome-shell-extension-system-monitor"
   "gnome-shell-extension-frippery-move-clock"
 )
 for extension in ${extensions[@]}; do
