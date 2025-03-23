@@ -14,7 +14,7 @@ echo "eval \"\$(starship init bash)\"" >> /etc/bashrc
 
 ### dnf
 
-packages = (
+packages=(
   "@virtualization"
   "nerd-fonts"
   "fastfetch"
@@ -24,7 +24,7 @@ for package in ${packages[@]}; do
 done
 
 # Gnome extensions
-extensions = (
+extensions=(
   "gnome-shell-extension-pop-shell"
   "gnome-shell-extension-blur-my-shell"
   "gnome-shell-extension-caffeine"

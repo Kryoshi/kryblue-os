@@ -4,7 +4,7 @@
 
 ## starship
 
-starship_preset = "tokyo-night"
+starship_preset="tokyo-night"
 
 starship preset "$starship_preset" -o ~/.config/starship.toml
 

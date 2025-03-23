@@ -2,7 +2,7 @@
 
 # Script to install flatpak applications
 
-flatpaks = (
+flatpaks=(
   "org.mozilla.firefox"
   "org.gnome.Loupe"
   "org.inkscape.Inkscape"
