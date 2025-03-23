@@ -12,6 +12,7 @@ set -ouex pipefail
 # this installs a package from fedora repos
 dnf5 install -y @virtualization
 dnf5 install -y gnome-shell-extension-pop-shell
+dnf5 install -y cascadia-code-nf-fonts
 
 dnf5 -y copr enable atim/starship
 dnf5 -y install starship
