@@ -15,7 +15,14 @@ FROM ghcr.io/ublue-os/silverblue-nvidia:latest
 
 COPY / /ctx
 
+# Build, cleanup, commit.
 RUN mkdir -p /var/lib/alternatives && \
-    /ctx/build/build.sh && \
-    ostree container commit
+    /ctx/build/build.sh  && \
+    mv /var/lib/alternatives /staged-alternatives && \
+    /ctx/build/clean-stage.sh && \
+    ostree container commit && \
+    mkdir -p /var/lib && mv /staged-alternatives /var/lib/alternatives && \
+    mkdir -p /var/tmp && \
+    chmod -R 1777 /var/tmp && \
+    rm -rf /ctx
     
