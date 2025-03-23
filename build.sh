@@ -13,6 +13,10 @@ set -ouex pipefail
 dnf5 install -y @virtualization
 dnf5 install -y gnome-shell-extension-pop-shell
 
+dnf5 -y copr enable atim/starship
+dnf5 -y install starship
+dnf5 -y copr disable atim/starship
+
 # Use a COPR Example:
 #
 # dnf5 -y copr enable ublue-os/staging
