@@ -18,6 +18,7 @@ packages=(
   "@virtualization"
   "nerd-fonts"
   "fastfetch"
+  "code"
 )
 for package in ${packages[@]}; do
   dnf5 install -y "$package"
