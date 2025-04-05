@@ -43,7 +43,7 @@ then
 fi
 
 # Set file path
-EXTENSIONS_FILE_PATH="/usr/local/etc/extensions-list.txt"
+EXTENSIONS_FILE_PATH="/usr/local/etc/code-extensions-list.txt"
 if [ ! -f "$EXTENSIONS_FILE_PATH" ]; then
   print_red "File, on path $EXTENSIONS_FILE_PATH, could not be found.\n❌ Aborting."
   exit 1
