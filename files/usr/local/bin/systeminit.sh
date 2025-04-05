@@ -19,3 +19,11 @@ flatpak remote-modify --no-filter --enable flathub
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 flatpak install -y --reinstall flathub $(flatpak list --app-runtime=org.fedoraproject.Platform --columns=application | tail -n +1 )
 flatpak remote-delete fedora
+
+## git
+
+git config --global user.name "Ashutush Choudhury"
+git config --global user.email "63922550+Kryoshi@users.noreply.github.com"
+git config --global init.defaultBranch main
+git config --global pull.rebase false
+git config --global core.editor "code"
