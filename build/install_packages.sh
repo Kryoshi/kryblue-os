@@ -14,19 +14,26 @@ echo "eval \"\$(starship init bash)\"" >> /etc/bashrc
 
 ### dnf
 
-packages=(
+PACKAGES_INSTALL=(
   "@virtualization"
   "nerd-fonts"
   "fastfetch"
   "code"
   "git"
 )
-for package in ${packages[@]}; do
-  dnf5 install -y "$package"
+for PACKAGE in ${PACKAGES_INSTALL[@]}; do
+  dnf5 install -y "$PACKAGE"
+done
+
+PACKAGES_REMOVE=(
+  "firefox"
+)
+for PACKAGE in ${PACKAGES_REMOVE[@]}; do
+  dnf5 remove -y "$PACKAGE"
 done
 
 # Gnome extensions
-extensions=(
+EXTENSIONS=(
   "gnome-shell-extension-pop-shell"
   "gnome-shell-extension-blur-my-shell"
   "gnome-shell-extension-caffeine"
@@ -35,6 +42,6 @@ extensions=(
   "gnome-shell-extension-system-monitor"
   "gnome-shell-extension-frippery-move-clock"
 )
-for extension in ${extensions[@]}; do
-  dnf5 install -y "$extension"
+for EXTENSION in ${EXTENSIONS[@]}; do
+  dnf5 install -y "$EXTENSION"
 done
