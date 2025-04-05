@@ -15,5 +15,5 @@ flatpaks=(
 )
 
 for flatpak in ${flatpaks[@]}; do
-  flatpak install flatpak
+  flatpak install -y flatpak
 done
