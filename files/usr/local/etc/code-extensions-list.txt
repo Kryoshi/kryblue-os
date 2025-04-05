@@ -1,5 +1,6 @@
 astro-build.astro-vscode
 dbaeumer.vscode-eslint
+enkia.tokyo-night
 esbenp.prettier-vscode
 jacobcassidy.css-nesting-syntax-highlighting
 mechatroner.rainbow-csv
