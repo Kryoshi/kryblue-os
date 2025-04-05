@@ -27,3 +27,7 @@ git config --global user.email "63922550+Kryoshi@users.noreply.github.com"
 git config --global init.defaultBranch main
 git config --global pull.rebase false
 git config --global core.editor "code"
+
+## code
+
+xdg-mime default code.desktop text/plain
