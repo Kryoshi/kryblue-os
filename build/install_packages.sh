@@ -25,6 +25,9 @@ for PACKAGE in ${PACKAGES_INSTALL[@]}; do
   dnf5 install -y "$PACKAGE"
 done
 
+dnf5 install -y gh --repo gh-cli
+
+
 PACKAGES_REMOVE=(
   "firefox"
 )
