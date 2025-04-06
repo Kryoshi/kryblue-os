@@ -30,6 +30,7 @@ dnf5 install -y gh --repo gh-cli
 
 PACKAGES_REMOVE=(
   "firefox"
+  "gnome-tour.x86_64"
 )
 for PACKAGE in ${PACKAGES_REMOVE[@]}; do
   dnf5 remove -y "$PACKAGE"
