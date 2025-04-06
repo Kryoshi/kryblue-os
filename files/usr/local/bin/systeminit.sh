@@ -31,3 +31,5 @@ git config --global core.editor "code"
 ## code
 
 xdg-mime default code.desktop text/plain
+/usr/local/bin/code_extensions_install.sh
+/usr/local/bin/code_settings_update.sh
