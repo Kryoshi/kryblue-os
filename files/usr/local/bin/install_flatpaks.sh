@@ -2,7 +2,7 @@
 
 # Script to install flatpak applications
 
-flatpaks=(
+FLATPAKS=(
   "org.mozilla.firefox"
   "org.gnome.Loupe"
   "org.inkscape.Inkscape"
@@ -14,6 +14,6 @@ flatpaks=(
   "org.videolan.VLC"
 )
 
-for flatpak in ${flatpaks[@]}; do
-  flatpak install -y flatpak
+for FLATPAK in ${FLATPAKS[@]}; do
+  flatpak install -y $FLATPAK
 done
