@@ -21,6 +21,7 @@ PACKAGES_INSTALL=(
   "code"
   "git"
   "steam"
+  "gamescope"
 )
 for PACKAGE in ${PACKAGES_INSTALL[@]}; do
   dnf5 install -y "$PACKAGE"
