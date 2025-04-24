@@ -20,6 +20,7 @@ PACKAGES_INSTALL=(
   "fastfetch"
   "code"
   "git"
+  "steam"
 )
 for PACKAGE in ${PACKAGES_INSTALL[@]}; do
   dnf5 install -y "$PACKAGE"
