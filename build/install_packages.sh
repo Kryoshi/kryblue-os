@@ -29,6 +29,16 @@ done
 
 dnf5 install -y gh --repo gh-cli
 
+PACKAGES_INSTALL_DOCKER=(
+  "docker-ce"
+  "docker-ce-cli"
+  "containerd.io"
+  "docker-buildx-plugin"
+  "docker-compose-plugin"
+)
+for PACKAGE in ${PACKAGES_INSTALL_DOCKER[@]}; do
+  dnf5 install -y "$PACKAGE"
+done
 
 PACKAGES_REMOVE=(
   "firefox"
