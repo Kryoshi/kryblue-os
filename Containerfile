@@ -1,28 +1,23 @@
-FROM ghcr.io/ublue-os/silverblue-main:latest
+ARG FEDORA_MAJOR_VERSION="${FEDORA_MAJOR_VERSION:-42}"
+ARG NVIDIA_DRIVER_TYPE=""
 
-## Other possible base images include:
-# FROM ghcr.io/ublue-os/bazzite:latest
-# FROM ghcr.io/ublue-os/bluefin-nvidia:stable
-# 
-# ... and so on, here are more base images
-# Universal Blue Images: https://github.com/orgs/ublue-os/packages
-# Fedora base image: quay.io/fedora/fedora-bootc:41
-# CentOS base images: quay.io/centos-bootc/centos-bootc:stream10
+FROM scratch AS ctx
+COPY / /
 
-### MODIFICATIONS
-## make modifications desired in your image and install packages by modifying the build.sh script
-## the following RUN directive does all the things required to run "build.sh" as recommended.
+FROM ghcr.io/ublue-os/akmods-nvidia${NVIDIA_DRIVER_TYPE}:main-${FEDORA_MAJOR_VERSION} AS akmods_nvidia
 
-COPY / /ctx
+FROM ghcr.io/ublue-os/silverblue-main:${FEDORA_MAJOR_VERSION}
 
 # Build, cleanup, commit.
-RUN mkdir -p /var/lib/alternatives && \
+RUN --mount=type=bind,from=ctx,src=/,dst=/ctx \ 
+    --mount=type=bind,from=akmods_nvidia,src=/rpms,dst=/tmp/akmods-nv-rpms \
+    mkdir -p /var/lib/alternatives && \
+    AKMODNV_PATH=/tmp/akmods-nv-rpms /ctx/build/nvidia_install.sh \
     /ctx/build/build.sh  && \
     mv /var/lib/alternatives /staged-alternatives && \
     /ctx/build/clean_stage.sh && \
     ostree container commit && \
     mkdir -p /var/lib && mv /staged-alternatives /var/lib/alternatives && \
     mkdir -p /var/tmp && \
-    chmod -R 1777 /var/tmp && \
-    rm -rf /ctx
+    chmod -R 1777 /var/tmp
     
