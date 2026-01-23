@@ -22,6 +22,7 @@ PACKAGES_INSTALL=(
   "git"
   "steam"
   "gamescope"
+  "smartmontools"
 )
 for PACKAGE in ${PACKAGES_INSTALL[@]}; do
   dnf5 install -y "$PACKAGE"
