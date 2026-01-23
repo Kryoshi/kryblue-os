@@ -4,7 +4,6 @@
 
 FLATPAKS=(
   "org.mozilla.firefox"
-  "org.gnome.Loupe"
   "org.inkscape.Inkscape"
   "com.github.PintaProject.Pinta"
   "com.jgraph.drawio.desktop"
@@ -12,6 +11,11 @@ FLATPAKS=(
   "com.discordapp.Discord"
   "org.gimp.GIMP"
   "org.videolan.VLC"
+  "com.usebottles.bottles"
+  "com.github.tchx84.Flatseal"
+  "org.kde.kasts"
+  "com.github.Matoking.protontricks"
+  "app.drey.Warp"
 )
 
 for FLATPAK in ${FLATPAKS[@]}; do
